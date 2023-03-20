@@ -1,0 +1,69 @@
+.home{
+    background: $blue0;
+    padding-bottom: 2rem;
+    
+
+    @include breakpoint-up(large){
+          display: flex;
+          align-items: center;
+    }
+    
+    &__image {
+        position: relative;
+        background-image: url("./../images/map-blue.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+        @include breakpoint-up(large){
+            flex: 3;
+            order: 2;
+            min-height: 30rem;
+            background-size: cover;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            background-image: url('/images/plane.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            width: 100%;
+            height: 100%;
+
+            @include breakpoint-up(large){
+                transform: translateY(30%);
+            }
+        }
+    }
+
+    &__text {
+        padding: 0 1rem;
+        text-align: center;
+        
+        @include breakpoint-up(large){
+            flex: 2;
+            order: 1;
+        }
+
+        h1{
+            font-size: 2.5rem;
+            line-height: 1.15;
+            color: $darkBlue;
+            margin: 1.5rem 0;
+
+            @include breakpoint-up(large){
+                font-size: 3rem;
+            }
+        }
+
+        p{
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+}

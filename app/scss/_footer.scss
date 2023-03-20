@@ -1,0 +1,101 @@
+.footer{
+    background-color: $blue1;
+    color: $darkBlue;
+    padding: 2rem;
+    text-align: center;
+
+    @include breakpoint-up(large){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 2fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: 
+            "logo links1 links2 cta"
+            "social links1 links2 cta";
+
+        justify-items: start;
+    }
+
+    a{
+        font-size: 1.3em;
+        font-weight: 500;
+        color: $darkBlue;
+    }
+    &__logo{
+        font-size: 3em !important;
+        font-weight: 800 !important;
+        font-style: italic;
+        letter-spacing: 0.5rem;
+        display: block;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(large){
+            grid-area: logo;
+        }
+        
+    }
+
+    &__social{
+        font-size: 1.5em;
+
+        @include breakpoint-up(large){
+            grid-area: social;
+            align-self: end;
+        }
+
+        i{
+            color: rgb(255, 46, 46);
+        }
+
+        a:not(:last-child) {
+            margin-right: 1rem ;
+        }
+    }
+
+    &__links{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        @include breakpoint-up(large){
+            align-items: start;
+        }
+
+        &.col1{
+            @include breakpoint-up(large){
+                grid-area: links1;
+            }
+
+        }
+
+        &.col2{
+
+            @include breakpoint-up(large){
+                grid-area: links2;
+            }
+        }
+    }
+
+    &__cta{
+
+        @include breakpoint-up(large){
+            grid-area: cta;
+            justify-self: end;
+            text-align: right;
+        }
+        
+
+        a.button{
+            color: $white;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+    }
+
+    &__copyright{
+        @include breakpoint-up(large){
+            font-size: 1em;
+            color: $black;
+        }
+    }
+}
