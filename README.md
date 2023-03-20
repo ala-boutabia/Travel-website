@@ -1,2 +1,2 @@
 # Travel-website
-A responsive travel website using html css and javascript.
+A responsive travel website using html, scss and javascript.
